@@ -5,12 +5,6 @@ VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECA", "ECA\ECA.csproj", "{3457C0D1-E75C-459F-AF79-43CFFA7B7249}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Docs", "Project Docs", "{2A0AC385-542F-404A-A18B-E55FF5E927AE}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\project management\Design Specs.docx = ..\..\..\project management\Design Specs.docx
-		..\..\..\project management\Requirements Analysis.docx = ..\..\..\project management\Requirements Analysis.docx
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

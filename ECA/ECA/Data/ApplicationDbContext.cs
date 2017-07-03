@@ -22,5 +22,12 @@ namespace ECA.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
-    }
+
+
+        // Test Scenario --BB
+        public DbSet<ECA.Models.Test> Test { get; set; }
+
+        
+       
+        }
 }
