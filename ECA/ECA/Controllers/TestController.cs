@@ -142,7 +142,7 @@ namespace ECA.Controllers
         {
             var test = await _context.Test.SingleOrDefaultAsync(m => m.ID == id);
             _context.Test.Remove(test);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();          
             return RedirectToAction("Index");
         }
 
