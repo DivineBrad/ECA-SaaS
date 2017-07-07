@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace ECA.Models
 {
-    // Test Scenario - BB
-    public class Test
+    public class Tenant
     {
         public int ID { get; set; }
-        public string Message { get; set; }
+        public string Name { get; set; }
+        public int TAddressID { get; set; }
+       // public TenantAddress Address { get; set; }
     }
 }

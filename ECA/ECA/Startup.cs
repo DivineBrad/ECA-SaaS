@@ -43,6 +43,10 @@ namespace ECA
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            // Add Test DB Secanrio - BB
+            services.AddDbContext<TestOrgDbContext>(options =>
+                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TestDb1;Trusted_Connection=True;MultipleActiveResultSets=true"));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -55,7 +59,8 @@ namespace ECA
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        // context added to signature - BB
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,TestOrgDbContext context)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -83,6 +88,9 @@ namespace ECA
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // Test Scenario - BB
+            OrgDbInitializer.Initialize(context);
         }
     }
 }

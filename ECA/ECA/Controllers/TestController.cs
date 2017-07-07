@@ -10,12 +10,11 @@ using ECA.Models;
 
 namespace ECA.Controllers
 {
-    // Test Scenario - BB
     public class TestController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly TestOrgDbContext _context;
 
-        public TestController(ApplicationDbContext context)
+        public TestController(TestOrgDbContext context)
         {
             _context = context;    
         }
@@ -23,7 +22,7 @@ namespace ECA.Controllers
         // GET: Test
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Test.ToListAsync());
+            return View(await _context.Tests.ToListAsync());
         }
 
         // GET: Test/Details/5
@@ -34,7 +33,7 @@ namespace ECA.Controllers
                 return NotFound();
             }
 
-            var test = await _context.Test
+            var test = await _context.Tests
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (test == null)
             {
@@ -74,7 +73,7 @@ namespace ECA.Controllers
                 return NotFound();
             }
 
-            var test = await _context.Test.SingleOrDefaultAsync(m => m.ID == id);
+            var test = await _context.Tests.SingleOrDefaultAsync(m => m.ID == id);
             if (test == null)
             {
                 return NotFound();
@@ -125,7 +124,7 @@ namespace ECA.Controllers
                 return NotFound();
             }
 
-            var test = await _context.Test
+            var test = await _context.Tests
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (test == null)
             {
@@ -140,15 +139,15 @@ namespace ECA.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var test = await _context.Test.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Test.Remove(test);
+            var test = await _context.Tests.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Tests.Remove(test);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool TestExists(int id)
         {
-            return _context.Test.Any(e => e.ID == id);
+            return _context.Tests.Any(e => e.ID == id);
         }
     }
 }

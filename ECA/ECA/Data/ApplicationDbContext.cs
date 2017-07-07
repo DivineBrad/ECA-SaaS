@@ -24,9 +24,6 @@ namespace ECA.Data
         }
 
 
-        // Test Scenario --BB
-        public DbSet<ECA.Models.Test> Test { get; set; }
-
         
        
         }
