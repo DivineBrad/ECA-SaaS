@@ -9,6 +9,7 @@ namespace ECA.Models
     {
 
         public int ID { get; set; }
+        public DateTime date { get; set; }
         public int CustomerID { get; set; }
         public string Notes { get; set; }
         public string Type { get; set; }

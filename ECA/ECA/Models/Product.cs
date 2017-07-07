@@ -11,17 +11,10 @@ namespace ECA.Models
         public int ID { get; set; }
         public string ProductName { get; set; }
         public double ProdPrice { get; set; }
-        public int prodQuantity { get; set; }
+        public int ProdQuantity { get; set; }
         public int ProdCode { get; set; }
 
-        public Product()
-        {
-
-        }
-        public Product(string productName, double prodPrice, int prodQuantity, int prodCode )
-        {
-             
-        }
+        
 
 
     }

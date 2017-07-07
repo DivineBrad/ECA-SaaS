@@ -10,6 +10,7 @@ namespace ECA.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public int SAddressID { get; set; }
+       
         // public SAddress { get; set; }
     }
 }
